@@ -1,5 +1,6 @@
 package com.spring.Application;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,8 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 public class StudentController {
 
+    @Autowired
+
+    private StudentService studentService;
     @GetMapping("/getId")
     String getStudentId() {
+        studentService.getStudentDetails();
         return "Student ID";
     }
 
