@@ -1,10 +1,8 @@
 package com.spring.Application;
 
-import org.springframework.stereotype.Component;
+import com.spring.Application.models.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Component
-public class StudentRepository {
-    String getStudentDetails() {
-        return "Student Details";
-    }
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+
 }
